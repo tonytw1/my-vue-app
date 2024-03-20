@@ -8,7 +8,7 @@ export function Articles() {
        return fetch('https://wellington.gen.nz/json')
        .then((response) => response.json())
        .then((responseJson) => {
-         setArticles(responseJson)
+         setArticles(responseJson);
        })
        .catch((error) => {
          console.error(error);
@@ -19,20 +19,18 @@ export function Articles() {
 
     function Article({row}) {
         return (
-            <li key={row.id}>
-                <h4>{row.headline}</h4>
-                <p>{row.description}</p>
-            </li>
+            <>
+            <h4>{row.headline}</h4>
+            <p>{row.description}</p>
+            </>
         )
     };
 
+    const listItems = articles.map(row =>  <li key={row.id}><Article row={row} /></li>);
+
     return (
         <>
-        <ul>
-        {articles.map((row) => (
-            <Article row={row} />
-        ))}
-        </ul>
+        <ul>{listItems}</ul>
         </>
     )
 }
