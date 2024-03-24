@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Articles } from './Articles';
+import { Routes } from './Routes.tsx';
+import { AddRouteForm } from './AddRouteForm';
 
 function App() {
   return (
     <>
-      <h1>Articles</h1>
-      <hr/>
-       <Articles />
-      <hr/>
+        <h1>Routes</h1>
+        <AddRouteForm />
+        <hr/>
+        <Routes />
+        <hr/>
     </>
   )
 }
