@@ -25,7 +25,7 @@ export function MetricsDropdown() {
         )
     };
 
-    const listItems = metrics.map(row => <MetricOption row={row}/> );
+    const listItems = metrics.map(row => <MetricOption key={row.Name} row={row}/> );
 
     return (
         <>

@@ -12,7 +12,6 @@ function App() {
     };
 
     function getRoutesAsync() {
-        console.log("GET ROUTES");
         return fetch('http://10.0.46.10:32100/routes')
             .then((response) => response.json())
             .then((responseJson) => {

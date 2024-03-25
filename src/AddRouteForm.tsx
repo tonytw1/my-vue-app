@@ -13,8 +13,6 @@ export function AddRouteForm({updateRoutes}) {
 
         formJson['Gauge'] = 'Meh';
 
-        console.log(formJson);
-
         const requestOptions = {
             method: 'POST',
             //headers: { 'Content-Type': 'application/json' },
