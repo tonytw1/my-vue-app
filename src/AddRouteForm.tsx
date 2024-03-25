@@ -1,7 +1,7 @@
 import {MetricsDropdown} from "./MetricsDropdown.tsx";
 import {GaugesDropdown} from "./GaugesDropdown.tsx";
 
-export function AddRouteForm() {
+export function AddRouteForm({updateRoutes}) {
 
     function handleSubmit(e) {
         // Prevent the browser from reloading the page
@@ -19,10 +19,13 @@ export function AddRouteForm() {
             method: 'POST',
             //headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formJson)
-
         }
 
         fetch('http://10.0.46.10:32100/routes', requestOptions)
+            .then((response) => response.json())
+            .then((responseJson) => {
+                updateRoutes(responseJson);
+            })
             .catch((error) => {
                 console.error(error);
             });
