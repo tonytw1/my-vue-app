@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes } from './Routes.tsx';
-import { AddRouteForm } from './AddRouteForm';
+import { AddRoute } from './AddRoute.tsx';
 import {useEffect, useState} from "react";
 
 function App() {
@@ -27,9 +27,9 @@ function App() {
     return (
     <>
         <h1>Routes</h1>
-        <AddRouteForm updateRoutes={updateRoutes} />
+        <AddRoute updateRoutes={updateRoutes} />
         <hr/>
-        <Routes routes={routes}/>
+        <Routes routes={routes} updateRoutes={updateRoutes}/>
         <hr/>
     </>
   )

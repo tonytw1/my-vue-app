@@ -1,7 +1,7 @@
 import {MetricsDropdown} from "./MetricsDropdown.tsx";
 import {GaugesDropdown} from "./GaugesDropdown.tsx";
 
-export function AddRouteForm({updateRoutes}) {
+export function AddRoute({updateRoutes}) {
 
     function handleSubmit(e) {
         // Prevent the browser from reloading the page
